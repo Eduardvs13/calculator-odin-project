@@ -30,7 +30,6 @@ const BUTTONS = [
 ];
 let operation = JSON.parse(localStorage.getItem("operation")) || [];
 let number = JSON.parse(localStorage.getItem("number")) || "";
-console.log(number);
 calculatorScreen.textContent = operation.join("");
 const updateOperation = (char) => {
   const clickedbutton = document.getElementById(`${char}-button`);
@@ -84,7 +83,6 @@ const updateOperation = (char) => {
   localStorage.setItem("operation", JSON.stringify(operation));
   localStorage.setItem("number",JSON.stringify(number));
   calculatorScreen.textContent = operation.join("");
-  console.log(number)
 };
 
 window.addEventListener("keydown", (event) => {
