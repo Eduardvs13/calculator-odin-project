@@ -90,6 +90,7 @@ window.addEventListener("keydown", (event) => {
   if (char == "Delete") char = "CLR";
   if (char == "Backspace") char = "DEL";
   if (char == "*") char = "x";
+  if (char == "Enter") char = "=";
   if (BUTTONS.includes(char)) updateOperation(char);
 });
 
