@@ -77,6 +77,7 @@ const updateOperation = (char) => {
     }
   }
   localStorage.setItem("operation", JSON.stringify(operation));
+  localStorage.setItem("number",number);
   calculatorScreen.textContent = operation.join("");
 };
 
