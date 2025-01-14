@@ -1,0 +1,76 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    color: #ffffff;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+body{
+    display: grid;
+    min-height: 100dvh;
+    grid-template-rows: auto 1fr auto;
+    background-color: rgb(1, 23, 24);
+}
+footer{
+    padding: 1vmin;
+    text-align: center;
+}
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3vmin;
+}
+h1{
+    font-size: 5vmin;
+}
+#calculator{
+    display: flex;
+    flex-direction: column;
+    width: 50vmin;
+    height: 70vmin;
+    background-color: rgb(0, 0, 0);
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 2vmin;
+    padding: 2vmin;
+}
+#calculator-screen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 30%;
+    background-color: #3ca3df;
+    border-radius: 2vmin;
+    padding: 2vmin;
+    color: rgb(255, 255, 255);
+    font-size: 4vmin;
+    overflow: scroll;
+}
+#calculator-buttons{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 66%;
+    width: 100%;
+    gap: 1vmin;
+    column-gap: 2vmin;
+    font-weight: bold;
+}
+.calculator-button{
+    font-size: 3vmin;
+    width: 19%;
+    height: 18%;
+    background-color: rgb(27, 27, 28);
+    border: transparent;
+    border-radius: 40%;
+}
+.calculator-button:hover{
+    background-color: rgb(78, 76, 76);
+}
+.clicked-button{
+    background-color: rgb(78, 76, 76);
+}
