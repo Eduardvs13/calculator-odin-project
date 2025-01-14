@@ -41,6 +41,7 @@ const updateOperation = (char) => {
   const lastIndex = operation.length - 1;
   const calculatorScreen = document.querySelector("#calculator-screen");
   if (BUTTONS.indexOf(char) <= 9) {
+    let special=false
     if (typeof operation[lastIndex] == "number") {
       operation[lastIndex] += char;
       operation[lastIndex] = parseFloat(operation[lastIndex]);
@@ -50,11 +51,14 @@ const updateOperation = (char) => {
         operation[lastIndex - 1] = parseFloat(
           `${operation[lastIndex - 1]}.${char}`
         );
+        number=operation[lastIndex-1];
+        special=true;
       } else {
         operation.push(parseFloat(char));
       }
     }
-    number += char;
+    if(!special) number += char;
+    special=false;
   } else if (number != "" && BUTTONS.indexOf(char) < BUTTONS.length - 3) {
     operation[lastIndex] = parseFloat(number);
     operation.push(char);
@@ -65,6 +69,7 @@ const updateOperation = (char) => {
   }
   if (char == "CLR" || char == "Delete") {
     operation = [];
+    number='';
   }
   if (char == "DEL" || char == "Backspace") {
     if (typeof operation[lastIndex] == "number") {
@@ -77,8 +82,9 @@ const updateOperation = (char) => {
     }
   }
   localStorage.setItem("operation", JSON.stringify(operation));
-  localStorage.setItem("number",number);
+  localStorage.setItem("number",JSON.stringify(number));
   calculatorScreen.textContent = operation.join("");
+  console.log(number)
 };
 
 window.addEventListener("keydown", (event) => {
