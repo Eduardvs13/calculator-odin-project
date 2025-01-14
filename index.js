@@ -80,9 +80,11 @@ const updateOperation = (char) => {
       operation.pop();
     }
   }
+  console.log(operation)
   localStorage.setItem("operation", JSON.stringify(operation));
   localStorage.setItem("number", JSON.stringify(number));
   calculatorScreen.textContent = operation.join("");
+  console.log(operation)
 };
 
 window.addEventListener("keydown", (event) => {
@@ -126,6 +128,10 @@ const calculate = () => {
       }
     });
   }
+  if(!operation[0]){
+    operation[0]=0;  
+  }
   let result = operation[0];
   number = result;
+  console.log(number)
 };
